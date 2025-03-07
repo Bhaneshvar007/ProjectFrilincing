@@ -1,0 +1,110 @@
+import { MdCancel } from "react-icons/md";
+
+import { useState, useEffect } from "react";
+
+export default function PopupForm() {
+    const [isOpen, setIsOpen] = useState(false);
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        phone: "",
+    });
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsOpen(true);
+        }, 15000); 
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Form submitted:", formData);
+        setIsOpen(false);
+    };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
+    if (!isOpen) return null;
+
+    return (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+            <div className="bg-white rounded-lg p-6 w-full max-w-[700px] relative shadow-lg">
+                {/* Close Button */}
+                <button onClick={() => setIsOpen(false)} className="absolute top-5 right-8 text-gray-600 hover:text-gray-900">
+                    <MdCancel className="text-2xl"/>
+                </button>
+
+                {/* Form Title */}
+                <h2 className="text-gray-800 text-2xl text-center font-semibold mb-6 mt-10">
+                    Complete the form below to receive a personalized investment plan in Prime Dubai
+                </h2>
+
+                {/* Form */}
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    {/* Full Name */}
+                    <div>
+                        <label className="block text-gray-700 mb-2">Full Name</label>
+                        <input
+                            type="text"
+                            name="fullName"
+                            value={formData.fullName}
+                            onChange={handleChange}
+                            required
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-amber-500"
+                            placeholder="Full Name"
+                        />
+                    </div>
+
+                    {/* Email */}
+                    <div>
+                        <label className="block text-gray-700 mb-2">E-mail</label>
+                        <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-amber-500"
+                            placeholder="E-mail"
+                        />
+                    </div>
+
+                    {/* Phone Number */}
+                    <div>
+                        <label className="block text-gray-700 mb-2">Phone Number</label>
+                        <div className="flex">
+                            <span className="inline-flex items-center px-3 py-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-100 text-gray-700">
+                                +91
+                            </span>
+                            <input
+                                type="tel"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                required
+                                className="flex-1 px-4 py-2 border border-gray-300 rounded-r-md focus:outline-none focus:ring-1 focus:ring-amber-500"
+                                placeholder="XX XXX XXXX"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Submit Button */}
+                    <button
+                        type="submit"
+                        className="w-full py-3 px-4 bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-md transition-colors"
+                    >
+                        SCHEDULE AN ONLINE MEETING
+                    </button>
+                </form>
+            </div>
+        </div>
+    );
+}
