@@ -5,26 +5,27 @@ import img from '../../assets/Faq.jpeg';
 const FAQPage = () => {
     const faqs = [
         {
-            question: "Does Dream House Estate provide after-sales services?",
-            answer: "Yes, we offer comprehensive after-sales services including maintenance and customer support."
+            question: "What is the Ramuji Water Park Premium Cottage?",
+            answer: "The Ramuji Water Park Premium Cottage is a fully furnished, ready-to-move-in residential unit with modern amenities like an LCD TV, mini fridge, AC, electric kettle, and geyser."
         },
         {
-            question: "Does Dream House Estate offer financing options?",
-            answer: "Yes, we collaborate with trusted financial partners to assist you in finding financing options that suit your needs. Our team will provide guidance and support throughout the financing process."
+            question: "Is bank financing available for purchasing a cottage?",
+            answer: "Yes, bank financing is available with easy installment options, making it convenient for buyers to own a premium cottage."
         },
         {
-            question: "How long will it take to sell my house?",
-            answer: "The duration varies based on market conditions, location, and pricing. On average, it can take a few weeks to a few months."
+            question: "Can the cottage be used for both residential and commercial purposes?",
+            answer: "Absolutely! Owners can live in their cottage or use it for business purposes like setting up a hotel, guest house, or vacation rental."
         },
         {
-            question: "What documents are required for property purchase?",
-            answer: "You need a valid ID, proof of income, and an initial deposit to proceed with the property purchase."
+            question: "What makes this location special?",
+            answer: "The cottages are situated in a prime location within Ramuji Water Park, offering access to world-class entertainment, a marriage garden, and resort-like amenities."
         },
         {
-            question: "Does Dream House Estate provide after-sales services?",
-            answer: "Yes, we offer comprehensive after-sales services including maintenance and customer support."
+            question: "Can I buy multiple cottages for business purposes?",
+            answer: "Yes, entrepreneurs can purchase 5 or 10 cottages to start a hotel or hospitality business. The company will also provide support and guidance in setting up the business."
         }
     ];
+    
 
     const [openIndex, setOpenIndex] = useState(null);
 
@@ -37,7 +38,7 @@ const FAQPage = () => {
             {/* Left Side - Image */}
             <div className="lg:w-1/2 w-full flex justify-center items-center rounded-xl overflow-hidden">
                 <img
-                    src={img}
+                    src="/Images/DJI_0747.JPG"
                     alt="FAQ Section"
                     className="w-full h-auto rounded-xl shadow-lg"
                 />
@@ -50,7 +51,7 @@ const FAQPage = () => {
                     {faqs.map((faq, index) => (
                         <div key={index} className="mb-4">
                             <button
-                                className="w-full text-left font-semibold bg-white p-4 rounded-lg shadow flex justify-between items-center transition-all duration-300"
+                                className="w-full text-left font-semibold bg-white p-2 md:p-4 rounded-lg shadow flex justify-between items-center transition-all duration-300"
                                 onClick={() => toggleFAQ(index)}
                             >
                                 {faq.question}

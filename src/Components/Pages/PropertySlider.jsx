@@ -1,41 +1,44 @@
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import img1 from "../../assets/HouseImg-1.jpg"
-import img2 from "../../assets/HouseImg-2.avif"
-import img3 from "../../assets/HouseImg-3.jpg"
-import img4 from "../../assets/HouseImg-4.jpeg"
-
 const properties = [
   {
     id: 1,
-    title: "The Modern House",
+    title: "Ramuji Premium Cottage",
     description:
-      "Our expertise ensures you get the best value your property deserves. Sell your property securely and efficiently, so you can achieve peace of mind and financial security.",
-    image: img1,
+      "Experience luxury living with our fully furnished premium cottages inside Ramuji Water Park. These cottages offer a perfect blend of comfort and modern amenities, including LCD TVs, mini fridges, AC, and a private garden view.",
+    image: '/Images/DJI_0743.JPG',
   },
   {
     id: 2,
-    title: "The Minimalist House",
+    title: "Modern Riverside Cottage",
     description:
-      "Our expertise ensures you get the best value your property deserves. Sell your property securely and efficiently, so you can achieve peace of mind and financial security.",
-    image: img2,
+      "Located in the heart of nature, this cottage offers a serene escape with access to world-class entertainment, marriage gardens, and resort-like amenities.",
+    image: '/Images/DJI_0768.JPG',
   },
   {
     id: 3,
-    title: "The Elegant House",
+    title: "Elegant Retreat Cottage",
     description:
-      "Our expertise ensures you get the best value your property deserves. Sell your property securely and efficiently, so you can achieve peace of mind and financial security.",
-    image: img3,
+      "A perfect combination of elegance and modern architecture, our retreat cottages provide a peaceful living experience with top-notch furnishings and breathtaking surroundings.",
+    image: "/Images/DJI_0747.JPG",
   },
   {
     id: 4,
-    title: "The Luxury Villa",
+    title: "Luxury Garden Villa",
     description:
-      "Our expertise ensures you get the best value your property deserves. Sell your property securely and efficiently, so you can achieve peace of mind and financial security.",
-    image: img4,
+      "These spacious cottages offer a lavish lifestyle with an exclusive garden area, perfect for both residential and commercial purposes such as vacation rentals or boutique stays.",
+    image: '/Images/DJI_0804.JPG',
   },
-]
+  {
+    id: 5,
+    title: "Exclusive Business Cottages",
+    description:
+      "Ideal for entrepreneurs, these cottages provide an excellent opportunity to set up a hospitality business with company support, making them a profitable investment in the growing tourism sector.",
+    image: '/Images/DJI_0770.JPG',
+  },
+];
+
 
 const PropertySlider = () => {
   const settings = {

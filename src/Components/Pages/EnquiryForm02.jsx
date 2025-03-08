@@ -23,20 +23,48 @@ export default function EnquiryForm02() {
     }
 
     return (
-        <div className="w-full max-w-7xl mx-auto bg-white px-4 sm:px-6 lg:px-8">
+        <div className="w-full  mx-auto bg-white px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold mb-6 text-center">RiverSide Community Now in Dubai</h1>
             <div className="flex flex-col md:flex-row bg-white gap-8">
                 {/* Left side - Image and Title */}
-                <div className="lg:w-1/2 w-full flex justify-center items-center rounded-xl overflow-hidden">
+                {/* <div className="lg:w-1/2 w-full flex justify-center items-center rounded-xl overflow-hidden">
                     <img
-                        src={img}
+                        src="/Images/DJI_0743.JPG"
                         alt="FAQ Section"
                         className="w-full h-auto rounded-xl shadow-lg object-cover"
                     />
+                </div> */}
+                <div className="lg:w-[1200px] w-full flex justify-center items-center rounded-xl overflow-hidden relative">
+                    <video
+                        controls
+                        autoPlay
+                        muted
+                        loop
+                        className="h-full w-full object-cover"
+                        style={{ filter: "brightness(0.7)" }}
+                    >
+                        <source src="/Video/VideoHome.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div className="absolute inset-0 bg-black/20"></div>
                 </div>
 
+
+                {/* <div className="lg:w-1/2 w-full flex justify-center items-center rounded-xl overflow-hidden relative">
+                    <iframe
+                        className="h-full w-full"
+                        src="https://www.youtube.com/embed/1DAr41GhgVM?autoplay=1&mute=1&loop=1"
+                        title="YouTube Video"
+                        frameBorder="0"
+                        allow="autoplay; encrypted-media"
+                        allowFullScreen
+                    ></iframe>
+                    <div className="absolute inset-0 bg-black/20"></div>
+                </div> */}
+
+
                 {/* Right side - Form */}
-                <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center">
+                <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
                     <div className="max-w-md mx-auto w-full">
                         <h2 className="text-2xl font-bold mb-8 text-center">Register Your Interest</h2>
 
@@ -111,7 +139,7 @@ export default function EnquiryForm02() {
                                 />
                             </div>
 
-                            <button type="submit" className="w-full md:w-auto px-8 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-md">
+                            <button type="submit" className="w-full md:w-auto px-8 py-2 bg-[#000] hover:bg-[#222] text-white rounded-md">
                                 Submit
                             </button>
                         </form>

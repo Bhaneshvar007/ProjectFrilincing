@@ -25,7 +25,7 @@ export default function EnquiryForm01() {
   };
 
   return (
-    <div className=" p-4 md:p-12 flex flex-col md:flex-row items-start justify-between">
+    <div id="EnquiryForm01" className="p-4 md:p-12 flex flex-col md:flex-row items-start justify-between">
       {/* Registration Form Section */}
       <div className="w-full md:w-1/2 mb-8 md:mb-0">
         <h2 className="text-3xl font-bold mb-8">Register Your Interest</h2>
@@ -69,8 +69,8 @@ export default function EnquiryForm01() {
             </label>
             <div className="flex border rounded-sm ">
               <div className="bg-white text-gray-700 px-2 flex focus:ring-1  items-center border-r border-gray-300">
-               +91
-              </div>  
+                +91
+              </div>
               <input
                 type="tel"
                 id="phone"
@@ -109,28 +109,26 @@ export default function EnquiryForm01() {
 
       {/* Property Information Section */}
       <div className="w-full md:w-1/2 md:pl-8">
-        <h2 className="text-3xl font-bold mb-2">Dubai's First RiverSide Community</h2>
-        <h3 className="text-2xl font-bold mb-6">Luxury Studio 1, 2 & 3 Bedroom in Dubai</h3>
+        <h2 className="text-3xl font-bold mb-2">Premium Cottage - Ramuji Water Park</h2>
+        <h3 className="text-2xl font-bold mb-6">T&CP Approved | Bank Finance Available</h3>
 
         <p className="mb-6">
-          Experience luxurious waterfront living at DAMAC Riverside Views, where urban living meets tranquility. Immerse
-          yourself in a sanctuary inspired by wellness, seamlessly blending nature with vibrant community life. DAMAC
-          Riverside Views combines Dubai's imaginative, world-class amenities with a lifestyle that celebrates
-          rejuvenation and meaningful experiences.
+          Premium Cottages are now available inside the Ramuji Water Park campus! Located in a prime area with top-notch amenities,
+          this could be your dream home at an unbeatable price of <span className="font-semibold">₹16,51,000</span>.
         </p>
 
         <p className="mb-8">
-          With upscale designs, beautifully reflect the surrounding nature. Expansive windows blend the interior with
-          the exterior, highlighting the breathtaking water views and flowing waterfalls. Choose from a range of{" "}
-          <span className="font-semibold">apartments, including Studios, and 1 to 3-bedroom units</span>. These homes
-          redefine apartment living, crafted for discerning individuals.
+          Spread over a 600 sq. ft. (20x30) plot with a built-up area of 450 sq. ft., these cottages come <span className="font-semibold">fully furnished</span>.
+          They include modern amenities such as a <span className="font-semibold">32-inch LCD TV, mini fridge, AC, fan, chairs, table, electric kettle, and geyser</span>.
+          Additionally, there is a beautiful 25,000 sq. ft. garden in front of the cottages, which will remain under company ownership.
         </p>
 
-        <button className="bg-[#000] hover:bg-[#111] text-[12px] lg:text-xl text-white font-medium py-2 lg:py-3 px-8 flex gap-2 items-center justify-center transition-colors rounded-full">
+        <button className="bg-[#000] hover:bg-[#111] text-[12px] lg:text-[1rem] text-white font-medium py-[10px] lg:py-3 px-8 flex gap-2 items-center justify-center transition-colors rounded-full">
           <IoCallOutline className="lg:text-xl text-base" />
-          ENQUIRE NOW
+          Contact Us
         </button>
       </div>
+
 
       {/*
       <div className="fixed bottom-6 right-6">

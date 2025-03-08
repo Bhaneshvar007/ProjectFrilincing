@@ -3,12 +3,11 @@
 import Navbar from "./Navbar";
 import { motion } from "framer-motion"
 // import video from '../../assets/VideoHome.mp4';
-// import img from '../..assets/Contemporary-Dream-Home.jpg';
 
 
 export default function HeroSection() {
     return (
-        <div className="relative min-h-screen w-full overflow-hidden">
+        <div className="relative h-[70vh] md:h-screen w-full overflow-hidden">
             {/* Background Video */}
             {/* <div className="absolute inset-0 z-0 overflow-hidden">
                 <video autoPlay muted loop className="h-full w-full object-cover" style={{ filter: "brightness(0.7)" }}>
@@ -25,19 +24,17 @@ export default function HeroSection() {
             {/*Background image  */}
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <img
-                    src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?cs=srgb&dl=pexels-binyaminmellish-186077.jpg&fm=jpg"
+                    src='/Images/DJI_0783.JPG'
                     alt="Background"
                     className="h-full w-full object-cover"
-                    style={{ filter: "brightness(0.7)" }}
+                    style={{ filter: "brightness(0.8)" }}
                 />
                 <div className="absolute inset-0 bg-black/20"></div>
             </div>
 
-
             {/* Main Content */}
             <div className="relative z-10 flex min-h-screen flex-col">
-                {/* Navbar Component */}
-                <Navbar />
+               
 
                 <div className="flex flex-1 flex-col items-center mt-32  px-4 text-center text-white md:px-8 lg:px-16">
                     <motion.h1

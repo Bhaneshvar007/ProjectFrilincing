@@ -1,40 +1,75 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { Home, Menu, X } from 'lucide-react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({scrollToEnquiry}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Track scroll position to detect when to change color
+  useEffect(() => {
+    const handleScroll = () => {
+      // You can adjust this value based on when your white background starts
+      const isScrolled = window.scrollY > 200;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Initial check in case page loads scrolled
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrolled]);
+
+  // Dynamic classes based on scroll position
+  const navbarClasses = scrolled
+    ? "flex items-center justify-between px-4 py-4 md:px-4 lg:px-14 fixed top-0 w-full bg-white shadow-md z-50"
+    : "flex items-center justify-between px-4 py-4 md:px-4 lg:px-14 fixed top-0 w-full z-50";
+
+  const textClasses = scrolled
+    ? "text-gray-800"
+    : "text-white";
+
+  const borderClasses = scrolled
+    ? "border-gray-800"
+    : "border-white";
+
+  const buttonClasses = scrolled
+    ? "rounded-full bg-black px-4 py-[6px] sm:px-5 sm:py-2 text-sm md:text-lg font-medium text-white shadow-md transition hover:bg-[#111]"
+    : "rounded-full bg-white px-4 py-[6px] sm:px-5 sm:py-2 text-sm md:text-lg font-medium text-gray-800 shadow-md transition hover:bg-gray-100";
 
   return (
-    <main className="flex items-center justify-between px-4 py-4 md:px-4 lg:px-14">
+    <main className={navbarClasses}>
       {/* Logo */}
-      <div className="flex items-center text-white">
-        <div className="mr-2 flex h-8 w-8 items-center justify-center rounded border border-white">
+      <div className={`flex items-center ${textClasses}`}>
+        <div className={`mr-2 flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded border ${borderClasses}`}>
           <Home className="h-4 w-4" />
         </div>
-        <span className="text-lg font-semibold">DreamHouse</span>
+        <span className="text-sm sm:text-lg font-semibold">DreamHouse</span>
       </div>
 
       {/* Navigation - Desktop */}
-      <nav className="hidden md:block">
+      {/* <nav className="hidden md:block">
         <ul className="flex space-x-2">
-          <li className="rounded-full bg-white px-5 py-2 font-medium text-gray-800">Home</li>
-          <li className="rounded-full px-5 py-2 font-medium text-white hover:bg-white/10">About</li>
-          <li className="rounded-full px-5 py-2 font-medium text-white hover:bg-white/10">Properties</li>
-          <li className="rounded-full px-5 py-2 font-medium text-white hover:bg-white/10">News</li>
-          <li className="rounded-full px-5 py-2 font-medium text-white hover:bg-white/10">Contact</li>
+          <li className={`rounded-full ${scrolled ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'} px-5 py-2 font-medium`}>Home</li>
+          <li className={`rounded-full px-5 py-2 font-medium ${textClasses} hover:bg-${scrolled ? 'gray-100' : 'white/10'}`}>About</li>
+          <li className={`rounded-full px-5 py-2 font-medium ${textClasses} hover:bg-${scrolled ? 'gray-100' : 'white/10'}`}>Properties</li>
+          <li className={`rounded-full px-5 py-2 font-medium ${textClasses} hover:bg-${scrolled ? 'gray-100' : 'white/10'}`}>News</li>
+          <li className={`rounded-full px-5 py-2 font-medium ${textClasses} hover:bg-${scrolled ? 'gray-100' : 'white/10'}`}>Contact</li>
         </ul>
-      </nav>
+      </nav> */}
 
       {/* Get Started Button - Desktop */}
-      <button className="hidden md:block rounded-full bg-white px-5 py-2 font-medium text-gray-800 shadow-md transition hover:bg-gray-100">
-        Get Started
+      <button className={buttonClasses} onClick={scrollToEnquiry}>
+        Get Enquiry
       </button>
 
       {/* Mobile Menu Button */}
-      <button 
-        className="md:hidden z-50 text-white"
+      {/* <button 
+        className={`md:hidden z-50 ${textClasses}`}
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
       >
         {mobileMenuOpen ? (
@@ -42,11 +77,11 @@ export default function Navbar() {
         ) : (
           <Menu className="h-6 w-6" />
         )}
-      </button>
+      </button> */}
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <motion.div 
+      {/* {mobileMenuOpen && (
+        <motion.div
           className="fixed inset-0 z-40 bg-black/90 flex flex-col items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -63,7 +98,7 @@ export default function Navbar() {
             </button>
           </nav>
         </motion.div>
-      )}
+      )} */}
     </main>
   );
 }
