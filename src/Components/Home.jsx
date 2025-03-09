@@ -9,6 +9,7 @@ import Footer from './Pages/Footer'
 import PopupForm from './Pages/PopupForm'
 import Navbar from './Pages/Navbar'
 import CommonBtn from './Pages/CommonBtn'
+import CottageTimer from './Pages/CottageTimer'
 
 const Home = () => {
   const enquiryRef = useRef(null);
@@ -19,20 +20,35 @@ const Home = () => {
   return (
     <>
       <Navbar scrollToEnquiry={scrollToEnquiry} />
+
       <HeroSection />
+
       <div ref={enquiryRef}>
         <EnquiryForm01 />
       </div>
+
+      <CottageTimer scrollToEnquiry={scrollToEnquiry} />
+
       <PropertySlider />
+
       <CommonBtn scrollToEnquiry={scrollToEnquiry} />
+
       <FAQPage />
+
       <CommonBtn scrollToEnquiry={scrollToEnquiry} />
+
       <LocaltionMap />
-      <div  className="mb-8">
+
+      <div className="mb-8">
         <CommonBtn scrollToEnquiry={scrollToEnquiry} />
       </div>
+
+      <CottageTimer scrollToEnquiry={scrollToEnquiry} />
+      
       <EnquiryForm02 />
+
       <Footer />
+
       <PopupForm />
     </>
   )
