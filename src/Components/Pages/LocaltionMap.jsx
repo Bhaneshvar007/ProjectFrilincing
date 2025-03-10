@@ -1,3 +1,4 @@
+import CommonBtn from "./CommonBtn"
 
 const locations = [
   {
@@ -5,8 +6,8 @@ const locations = [
     time: "12 Mins",
     image: "https://www.andyluxury.com/wp-content/uploads/2024/11/Landmark-Icons-07-780x780.png?height=80&width=80",
     alt: "Airport Icon",
-},
-{
+  },
+  {
     name: "Dubai Marina",
     image: "https://www.andyluxury.com/wp-content/uploads/2024/11/Landmark-Icons-01-780x780.png?height=80&width=80",
     time: "15 Mins",
@@ -26,7 +27,7 @@ const locations = [
   },
 ]
 
-export default function LocationMap() {
+export default function LocationMap({ scrollToEnquiry }) {
   return (
     <div className="bg-gradient-to-b from-white to-gray-50 min-h-screen w-full">
       <div>
@@ -90,6 +91,12 @@ export default function LocationMap() {
               </p>
             </div>
           </div>
+        </div>
+
+
+        {/* Btn */}
+        <div className="mb-5 -mt-5">
+          <CommonBtn scrollToEnquiry={scrollToEnquiry} />
         </div>
 
         {/* Map Section (Unchanged) */}

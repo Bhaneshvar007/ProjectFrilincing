@@ -37,7 +37,7 @@ const Home = () => {
 
       <CommonBtn scrollToEnquiry={scrollToEnquiry} />
 
-      <LocaltionMap />
+      <LocaltionMap scrollToEnquiry={scrollToEnquiry}/>
 
       <div className="mb-8">
         <CommonBtn scrollToEnquiry={scrollToEnquiry} />
