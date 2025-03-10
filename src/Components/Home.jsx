@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import HeroSection from './Pages/HeroSection'
 import EnquiryForm01 from './Pages/EnquiryForm01'
 import FAQPage from './Pages/FAQPage'
@@ -12,6 +12,8 @@ import CommonBtn from './Pages/CommonBtn'
 import CottageTimer from './Pages/CottageTimer'
 
 const Home = () => {
+      const [isOpen, setIsOpen] = useState(false);
+  
   const enquiryRef = useRef(null);
 
   const scrollToEnquiry = () => {
@@ -24,10 +26,14 @@ const Home = () => {
       <HeroSection />
 
       <div ref={enquiryRef}>
-        <EnquiryForm01 />
+        <EnquiryForm01 setIsOpen={setIsOpen}/>
       </div>
 
-      <CottageTimer scrollToEnquiry={scrollToEnquiry} />
+      <div className=''>
+        <CottageTimer scrollToEnquiry={scrollToEnquiry}
+          heading1="Time is Running Out - Don’t Miss!"
+          heading2="Book a free visit at the location Today!" />
+      </div>
 
       <PropertySlider />
 
@@ -37,19 +43,23 @@ const Home = () => {
 
       <CommonBtn scrollToEnquiry={scrollToEnquiry} />
 
-      <LocaltionMap scrollToEnquiry={scrollToEnquiry}/>
+      <LocaltionMap scrollToEnquiry={scrollToEnquiry} />
 
       <div className="mb-8">
         <CommonBtn scrollToEnquiry={scrollToEnquiry} />
       </div>
 
-      <CottageTimer scrollToEnquiry={scrollToEnquiry} />
-      
+      <CottageTimer
+        scrollToEnquiry={scrollToEnquiry}
+        heading1="Own Lifetime Relaxation With Never before Offer"
+        heading2="Your Cottage Awaits – Schedule a Tour Today"
+      />
+
       <EnquiryForm02 />
 
       <Footer />
 
-      <PopupForm />
+      <PopupForm isOpen={isOpen} setIsOpen={setIsOpen}/>
     </>
   )
 }

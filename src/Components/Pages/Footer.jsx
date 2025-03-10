@@ -9,16 +9,16 @@ const Footer = () => {
                 <FaTwitter className="text-gray-500 hover:text-gray-900 text-2xl" />
                 <FaFacebook className="text-gray-500 hover:text-gray-900 text-2xl" />
             </div>
-            <nav className="flex justify-center space-x-4 text-sm mb-2">
-                <a href="#" className="hover:text-gray-900">Home</a>
-                <a href="#" className="hover:text-gray-900">Services</a>
-                <a href="#" className="hover:text-gray-900">About</a>
-                <a href="#" className="hover:text-gray-900">Terms</a>
-                <a href="#" className="hover:text-gray-900">Privacy Policy</a>
-            </nav>
-            <p className="text-gray-500 text-xs flex justify-center items-center">
-                <FaRegCopyright className="mr-1" /> Future Coders © 2021
-            </p>
+
+            <div className='flex flex-col sm:flex-row justify-between px-10'>
+                <p className="text-gray-500 flex justify-center items-center">
+                    <FaRegCopyright className="mr-1" /> Hanshika Farms © 2025
+                </p>
+                <div>
+                    Created by <a href="https://naman-web.netlify.app/" target='_blank' className='hover:underline'>Naman Jain</a>
+                </div>
+            </div>
+
         </footer>
 
     );

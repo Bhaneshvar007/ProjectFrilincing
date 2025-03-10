@@ -2,54 +2,44 @@ import CommonBtn from "./CommonBtn"
 
 const locations = [
   {
-    name: "Al Maktoum Airport",
-    time: "12 Mins",
+    name: "From Jabalpur Airport",
+    time: "20 Km",
     image: "https://www.andyluxury.com/wp-content/uploads/2024/11/Landmark-Icons-07-780x780.png?height=80&width=80",
     alt: "Airport Icon",
   },
   {
-    name: "Dubai Marina",
+    name: "via Bargi Hills Rd from Jabalpur Junction",
     image: "https://www.andyluxury.com/wp-content/uploads/2024/11/Landmark-Icons-01-780x780.png?height=80&width=80",
-    time: "15 Mins",
+    time: "45 min (17. 49 km)",
     alt: "Marina Icon",
   },
   {
-    name: "Emirates Road",
-    time: "5 Mins",
+    name: "via NH 34",
+    time: "55 min (32.0 km)",
     image: "https://www.andyluxury.com/wp-content/uploads/2024/11/07.webp?height=80&width=80",
     alt: "Road Icon",
   },
-  {
-    name: "Palm Jebel Ali",
-    time: "15 Mins",
-    image: "https://www.andyluxury.com/wp-content/uploads/2024/11/Landmark-Icons-08-780x780.png?height=80&width=80",
-    alt: "Palm Icon",
-  },
+
 ]
 
 export default function LocationMap({ scrollToEnquiry }) {
   return (
     <div className="bg-gradient-to-b from-white to-gray-50 min-h-screen w-full">
-      <div>
-        <title>Location - Bengaluru</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </div>
-
       <div className="container mx-auto px-4 py-12">
         <div className="relative mb-16">
-          <h1 className="text-center text-3xl md:text-5xl font-bold mb-2 text-gray-800 tracking-tight">LOCATION</h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+          <h1 className="text-center text-3xl md:text-5xl font-bold mb-2 text-gray-800 tracking-tight">Locational Advantages</h1>
+          <div className="w-28 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
           <p className="text-center text-gray-600 mt-4 max-w-2xl mx-auto">
-            Strategically positioned for convenient access to Dubai's key destinations
+            Know What Makes Our Cottages’ Location Premium
           </p>
         </div>
 
         {/* Enhanced Location Cards with Images */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div className="flex flex-wrap justify-center  gap-8 mb-20  ">
           {locations.map((loc, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-72"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-50"></div>
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-purple-500"></div>
@@ -74,20 +64,21 @@ export default function LocationMap({ scrollToEnquiry }) {
           ))}
         </div>
 
+
         {/* Location Highlights */}
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-16">
+        <div className="bg-white rounded-xl shadow-lg p-6 mb-16 max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-6 md:mb-0 md:w-1/3">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Prime Location</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Clean Environment </h3>
               <p className="text-gray-600">
-                Situated in a strategic area with easy access to major attractions and business hubs.
+                Ramuji Water Park is renowned for its clean & family-friendly environment and well-maintained rides. Buying a cottage/s here means a safe and clean getaway home amid the scenic and peaceful environment.
               </p>
             </div>
             <div className="w-full md:w-1/3 h-0.5 md:h-16 bg-gray-100 md:mx-6 my-4 md:my-0 "></div>
             <div className="mb-6 md:mb-0 md:w-1/3">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Excellent Connectivity</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Easy Connectivity</h3>
               <p className="text-gray-600">
-                Well-connected to major highways and transportation networks for seamless travel.
+                Ramuji Water Park is well connected to Jabalpur city. Easy accessibility via highway ensures no stress in commuting even at odd hours by both private and public transportation.
               </p>
             </div>
           </div>
@@ -101,8 +92,12 @@ export default function LocationMap({ scrollToEnquiry }) {
 
         {/* Map Section (Unchanged) */}
         <div className="mb-8">
-          <h2 className="text-center text-2xl md:text-3xl font-bold mb-8 text-gray-800">Map</h2>
 
+          <div className="text-center">
+            <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800">Check Map To Reach Us</h2>
+            <h2 className="text-center text-2xl md:text-3xl font-bold mb-8 text-gray-800">Take a Virtual Tour or Book an In-Person Visi</h2>
+
+          </div>
           <div className="relative rounded-lg overflow-hidden border-2 border-gray-300 shadow-lg">
             <div className="w-full h-[400px] md:h-[500px] relative">
               <iframe

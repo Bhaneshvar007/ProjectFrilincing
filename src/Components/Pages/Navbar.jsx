@@ -48,7 +48,7 @@ export default function Navbar({scrollToEnquiry}) {
         <div className={`mr-2 flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded border ${borderClasses}`}>
           <Home className="h-4 w-4" />
         </div>
-        <span className="text-sm sm:text-lg font-semibold">DreamHouse</span>
+        <span className="text-sm sm:text-lg font-semibold">Hanshika Farms</span>
       </div>
 
       {/* Navigation - Desktop */}

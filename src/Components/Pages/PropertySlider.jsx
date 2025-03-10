@@ -4,37 +4,37 @@ import "slick-carousel/slick/slick-theme.css"
 const properties = [
   {
     id: 1,
-    title: "Ramuji Premium Cottage",
+    title: "Premium Amenities loaded",
     description:
-      "Experience luxury living with our fully furnished premium cottages inside Ramuji Water Park. These cottages offer a perfect blend of comfort and modern amenities, including LCD TVs, mini fridges, AC, and a private garden view.",
-    image: '/Images/DJI_0743.JPG',
-  },
-  {
-    id: 2,
-    title: "Modern Riverside Cottage",
-    description:
-      "Located in the heart of nature, this cottage offers a serene escape with access to world-class entertainment, marriage gardens, and resort-like amenities.",
+      "Hanshika Farms strives to fulfill the dream of owning ultra-luxurious cottages for people seeking natural serenity in their private vacation homes. Our fully furnished cottages are the address of luxury and comfort. Check our list of amenities packed in each cottage.",
     image: '/Images/DJI_0768.JPG',
   },
   {
-    id: 3,
-    title: "Elegant Retreat Cottage",
+    id: 2,
+    title: "Buy-to-Rent",
     description:
-      "A perfect combination of elegance and modern architecture, our retreat cottages provide a peaceful living experience with top-notch furnishings and breathtaking surroundings.",
+      "Buy the cottage today and rent it to us to earn passive income. Hanshika Farms will pay monthly rent against your cottage. Invest, own, and relax. Watch your money grow with Return on investment and rental income.Get High ROI Enquiry Now!",
+    image: '/Images/DJI_0743.JPG',
+  },
+  {
+    id: 3,
+    title: "Your Staycation Resort",
+    description:
+      "Hanshika Farms cottages are your retreat home to enjoy luxurious living with family and friends. The nearness to the Ramuji Water Park makes these cottages an ideal staycation resort for weekends, festival breaks, and more. ",
     image: "/Images/DJI_0747.JPG",
   },
   {
     id: 4,
-    title: "Luxury Garden Villa",
+    title: "Garden Facing Cottages",
     description:
-      "These spacious cottages offer a lavish lifestyle with an exclusive garden area, perfect for both residential and commercial purposes such as vacation rentals or boutique stays.",
+      "The company-owned garden spanning across the area of 25,000 sq. ft. in the front of these cottages ensures you enjoy the natural serenity, peace, and the cleanest air to breathe. Relax here in the pure air to revitalize yourself. ",
     image: '/Images/DJI_0804.JPG',
   },
   {
     id: 5,
-    title: "Exclusive Business Cottages",
+    title: "Plan Business Expansions",
     description:
-      "Ideal for entrepreneurs, these cottages provide an excellent opportunity to set up a hospitality business with company support, making them a profitable investment in the growing tourism sector.",
+      "Company and business owners can invest with us in these cottages to enter the hospitality business. Together we can make tourism a thriving sector and a profit-making venture as these cottages are grabbing eye-balls among investors and end-users alike.",
     image: '/Images/DJI_0770.JPG',
   },
 ];
@@ -80,8 +80,9 @@ const PropertySlider = () => {
 
   return (
     <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 py-6">
-      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-6">
-        Move-In Ready Gems: <br className="hidden sm:block" /> Discover Your Dream Home Today
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-6 mt-5">
+        Dreaming of Owning a Retreat home?
+        <br className="hidden sm:block" />Wait Is Over …. Own a Ready-To-Relish Property
       </h2>
       <div className="px-2">
         <Slider {...settings}>

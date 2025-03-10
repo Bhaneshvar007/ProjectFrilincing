@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { Clock, Home } from "lucide-react"
 
-export default function CottageTimer({ scrollToEnquiry }) {
+export default function CottageTimer({ scrollToEnquiry, heading1, heading2 }) {
     // Set target date to March 31st
     const targetDate = "2025-03-31T23:59:59"
     const cottagesLeft = 25
@@ -41,11 +41,13 @@ export default function CottageTimer({ scrollToEnquiry }) {
 
     return (
         <main className="flex flex-col items-center justify-center p-4 bg-white border">
-            <div className="max-w-4xl w-full ">
-                <div className="overflow-hidden  ">
-                    <div className=" bg-cover bg-center h-24 flex items-center justify-center">
-                        <h2 className="text-white text-2xl md:text-3xl font-bold drop-shadow-lg px-4 py-2 bg-black/40 rounded-lg">
-                            Limited Time Offer
+            <div className="max-w-4xl w-full py-10 ">
+                <div className="overflow-hidden mt-5 ">
+                    <div className=" bg-cover bg-center flex items-center justify-center">
+                        <h2 className="text-center text-gray-600 text-2xl md:text-3xl font-bold drop-shadow-lg px-4 py-2 rounded-lg">
+                            {heading1} <br />
+                            {heading2}
+
                         </h2>
                     </div>
 
@@ -86,8 +88,8 @@ export default function CottageTimer({ scrollToEnquiry }) {
 
                             <button
                                 className="mt-2 bg-black hover:bg-[#222] text-white font-medium py-3 px-6 rounded-lg transition-colors shadow-md"
-                                onClick={scrollToEnquiry} 
-                                >
+                                onClick={scrollToEnquiry}
+                            >
                                 Book Your Cottage Now
                             </button>
                         </div>

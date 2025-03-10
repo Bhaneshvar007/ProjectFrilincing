@@ -5,27 +5,27 @@ import img from '../../assets/Faq.jpeg';
 const FAQPage = () => {
     const faqs = [
         {
-            question: "What is the Ramuji Water Park Premium Cottage?",
-            answer: "The Ramuji Water Park Premium Cottage is a fully furnished, ready-to-move-in residential unit with modern amenities like an LCD TV, mini fridge, AC, electric kettle, and geyser."
+            question: "How far is Hanshika Farms Cottages from Jabalpur Railway Station?",
+            answer: "Hanshika Farms cottages are located inside Ramuji Water Park, Mukunwara Road, Ghat Pipariya, near Sukh Sagar Medical College, Jabalpur. It is about 17.49 kilometers from Jabalpur Railway Station."
         },
         {
-            question: "Is bank financing available for purchasing a cottage?",
-            answer: "Yes, bank financing is available with easy installment options, making it convenient for buyers to own a premium cottage."
+            question: "What amenities are provided at Hanshika Farms cottages?",
+            answer: "Our cottages are laden with all the top-notch amenities, like 32-inch LCD TV, mini fridge, AC, fan, chairs, table, electric kettle, and geyser to ensure your luxury living is uncompromised."
         },
         {
-            question: "Can the cottage be used for both residential and commercial purposes?",
-            answer: "Absolutely! Owners can live in their cottage or use it for business purposes like setting up a hotel, guest house, or vacation rental."
+            question: "How can I book a cottage with Hanshika Farms?",
+            answer: "Call us on 7999599875 or visit our office on the 2nd floor, Roopali Chambar, New Medicine Complex, Shastri Bridge, Jabalpur (M.P.)"
         },
         {
-            question: "What makes this location special?",
-            answer: "The cottages are situated in a prime location within Ramuji Water Park, offering access to world-class entertainment, a marriage garden, and resort-like amenities."
+            question: "Is a finance facility available for buying the cottage?",
+            answer: "Yes, Hanshika Farms home cottages is a T&CP Approved project. Easy bank finance facility is available so that one does not need to make a full payment from the pocket. Also, You can rent the same cottage you bought from Hanshika Farms to us and enjoy monthly rental income. This way you can own a property without financial burden."
         },
         {
-            question: "Can I buy multiple cottages for business purposes?",
-            answer: "Yes, entrepreneurs can purchase 5 or 10 cottages to start a hotel or hospitality business. The company will also provide support and guidance in setting up the business."
+            question: "Can I invest for commercial purposes in these cottages?",
+            answer: "Yes, investors, buyers( end-users) and resellers are most welcome to join hands with us to promote tourism around this area."
         }
     ];
-    
+
 
     const [openIndex, setOpenIndex] = useState(null);
 
@@ -46,7 +46,7 @@ const FAQPage = () => {
 
             {/* Right Side - FAQ */}
             <div className="lg:w-1/2 w-full flex flex-col justify-center items-start lg:p-6 lg:mt-0 mt-5">
-                <h2 className="text-3xl font-bold mb-6">General FAQs</h2>
+                <h2 className="text-3xl font-bold mb-6">FAQs related to Hanshika Farm Home Cottages</h2>
                 <div className="w-full">
                     {faqs.map((faq, index) => (
                         <div key={index} className="mb-4">

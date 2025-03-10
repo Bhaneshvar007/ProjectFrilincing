@@ -18,13 +18,42 @@ export default function EnquiryForm02() {
         }))
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-    }
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+      
+        const formData = new FormData(event.target);
+        formData.append("access_key", "a308cb68-1e66-4a9d-b5b4-c50bd1ea78b6");
+      
+        try {
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData,
+          });
+      
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+      
+          const data = await response.json();
+      
+          if (data.success) {
+            alert("Form Submitted Successfully ✅");
+            event.target.reset();
+          } else {
+            console.log("Error", data);
+            setResult(data.message);
+            alert("Error: " + data.message);
+          }
+        } catch (error) {
+          console.error("Fetch Error:", error);
+          alert("Something went wrong. Please check your internet connection.");
+        }
+      };
+      
 
     return (
         <div className="w-full  mx-auto bg-white px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold mb-6 text-center">RiverSide Community Now in Dubai</h1>
+            <h1 className="text-3xl font-bold mb-6 text-center mt-10">Explore Our Cozy Cottages – Book a Tour</h1>
             <div className="flex flex-col md:flex-row bg-white gap-8">
                 {/* Left side - Image and Title */}
                 {/* <div className="lg:w-1/2 w-full flex justify-center items-center rounded-xl overflow-hidden">
@@ -35,7 +64,7 @@ export default function EnquiryForm02() {
                     />
                 </div> */}
                 <div className="lg:w-[1200px] w-full flex justify-center items-center rounded-xl overflow-hidden relative">
-                    <video
+                    {/* <video
                         controls
                         autoPlay
                         muted
@@ -45,7 +74,9 @@ export default function EnquiryForm02() {
                     >
                         <source src="/Video/VideoHome.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
-                    </video>
+                    </video> */}
+
+                    <img src="/Images/DJI_0770.JPG" alt="content image" />
                     <div className="absolute inset-0 bg-black/20"></div>
                 </div>
 

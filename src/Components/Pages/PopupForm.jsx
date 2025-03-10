@@ -2,8 +2,7 @@ import { MdCancel } from "react-icons/md";
 
 import { useState, useEffect } from "react";
 
-export default function PopupForm() {
-    const [isOpen, setIsOpen] = useState(false);
+export default function PopupForm({isOpen, setIsOpen}) {
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
@@ -13,16 +12,45 @@ export default function PopupForm() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsOpen(true);
-        }, 15000); 
+        }, 10000);
 
         return () => clearTimeout(timer);
     }, []);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Form submitted:", formData);
-        setIsOpen(false);
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        formData.append("access_key", "a308cb68-1e66-4a9d-b5b4-c50bd1ea78b6");
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData,
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            if (data.success) {
+                alert("Form Submitted Successfully ✅");
+                event.target.reset();
+            } else {
+                console.log("Error", data);
+                setResult(data.message);
+                alert("Error: " + data.message);
+            }
+            setIsOpen(false);
+        } catch (error) {
+            console.error("Fetch Error:", error);
+            alert("Something went wrong. Please check your internet connection.");
+        }
+        
     };
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -39,7 +67,7 @@ export default function PopupForm() {
             <div className="bg-white rounded-lg p-6 w-full max-w-[700px] relative shadow-lg">
                 {/* Close Button */}
                 <button onClick={() => setIsOpen(false)} className="absolute top-5 right-8 text-gray-600 hover:text-gray-900">
-                    <MdCancel className="text-2xl"/>
+                    <MdCancel className="text-2xl" />
                 </button>
 
                 {/* Form Title */}
