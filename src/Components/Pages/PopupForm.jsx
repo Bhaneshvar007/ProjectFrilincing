@@ -127,7 +127,7 @@ export default function PopupForm({isOpen, setIsOpen}) {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="w-full py-3 px-4 bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-md transition-colors"
+                        className="w-full py-3 px-4 bg-[#000] hover:bg-[#000] text-white font-medium rounded-md transition-colors"
                     >
                         SCHEDULE AN ONLINE MEETING
                     </button>

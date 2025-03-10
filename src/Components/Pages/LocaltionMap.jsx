@@ -101,7 +101,7 @@ export default function LocationMap({ scrollToEnquiry }) {
           <div className="relative rounded-lg overflow-hidden border-2 border-gray-300 shadow-lg">
             <div className="w-full h-[400px] md:h-[500px] relative">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.84916296526!2d77.6309395!3d12.9539974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1709835400000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.264124034067!2d79.92700192959788!3d23.157269365221723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981af0017bed465%3A0xddfab24bde53b837!2sRupali%20complex%20Shastri%20bridge!5e0!3m2!1sen!2sin!4v1741628453502!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
