@@ -8,7 +8,7 @@ export default function EnquiryForm01({ setIsOpen }) {
     firstName: "",
     lastName: "",
     phone: "",
-    email: "",
+    // email: "",
   });
 
   const handleChange = (e) => {
@@ -64,8 +64,9 @@ export default function EnquiryForm01({ setIsOpen }) {
             <label htmlFor="firstName" className="block mb-2">
               Name <span className="text-red-500">*</span>
             </label>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <div className="w-full sm:w-1/2">
+            <div className="flex flex-col gap-4">
+              <div className="w-full">
+                <span className="text-sm text-gray-400 mt-1 block">First Name</span>
                 <input
                   type="text"
                   id="firstName"
@@ -75,9 +76,9 @@ export default function EnquiryForm01({ setIsOpen }) {
                   className="w-full px-3 py-2 border rounded"
                   required
                 />
-                <span className="text-sm text-gray-400 mt-1 block">First</span>
               </div>
-              <div className="w-full sm:w-1/2">
+              <div className="w-full">
+                <span className="text-sm text-gray-400 mt-1 block">Last Name</span>
                 <input
                   type="text"
                   id="lastName"
@@ -87,9 +88,9 @@ export default function EnquiryForm01({ setIsOpen }) {
                   className="w-full px-3 py-2 border bg-white text-black rounded"
                   required
                 />
-                <span className="text-sm text-gray-400 mt-1 block">Last</span>
               </div>
             </div>
+
           </div>
 
           <div className="mb-6">
@@ -103,7 +104,7 @@ export default function EnquiryForm01({ setIsOpen }) {
               <input
                 type="tel"
                 id="phone"
-                name="phone" placeholder="9681452851"
+                name="phone" placeholder="xxx xxx xxxx"
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full px-3 py-2 bg-white text-black active:border-none outline-none  focus:outline-none focus:ring-1 focus:ring-amber-500"
@@ -112,7 +113,7 @@ export default function EnquiryForm01({ setIsOpen }) {
             </div>
           </div>
 
-          <div className="mb-6">
+          {/* <div className="mb-6">
             <label htmlFor="email" className="block mb-2">
               Email <span className="text-red-500">*</span>
             </label>
@@ -125,7 +126,7 @@ export default function EnquiryForm01({ setIsOpen }) {
               className="w-full px-3 py-2 bg-white text-black border  rounded"
               required
             />
-          </div>
+          </div> */}
 
           <button
             type="submit"

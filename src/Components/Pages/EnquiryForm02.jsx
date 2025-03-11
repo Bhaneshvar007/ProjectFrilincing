@@ -6,7 +6,7 @@ export default function EnquiryForm02() {
         firstName: "",
         lastName: "",
         phone: "",
-        email: "",
+        // email: "",
         countryCode: "AE", // Default to UAE
     })
 
@@ -20,36 +20,36 @@ export default function EnquiryForm02() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-      
+
         const formData = new FormData(event.target);
         formData.append("access_key", "a308cb68-1e66-4a9d-b5b4-c50bd1ea78b6");
-      
+
         try {
-          const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData,
-          });
-      
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-      
-          const data = await response.json();
-      
-          if (data.success) {
-            alert("Form Submitted Successfully ✅");
-            event.target.reset();
-          } else {
-            console.log("Error", data);
-            setResult(data.message);
-            alert("Error: " + data.message);
-          }
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData,
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            if (data.success) {
+                alert("Form Submitted Successfully ✅");
+                event.target.reset();
+            } else {
+                console.log("Error", data);
+                setResult(data.message);
+                alert("Error: " + data.message);
+            }
         } catch (error) {
-          console.error("Fetch Error:", error);
-          alert("Something went wrong. Please check your internet connection.");
+            console.error("Fetch Error:", error);
+            alert("Something went wrong. Please check your internet connection.");
         }
-      };
-      
+    };
+
 
     return (
         <div className="w-full  mx-auto bg-white px-4 sm:px-6 lg:px-8">
@@ -104,30 +104,30 @@ export default function EnquiryForm02() {
                                 <label htmlFor="fName" className="block mb-2">
                                     Name <span className="text-red-500">*</span>
                                 </label>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div>
+                                <div className="flex flex-col gap-4">
+                                    <div className="w-full">
+                                        <span className="text-sm text-gray-400 mt-1 block">First Name</span>
                                         <input
-                                            id="fName"
+                                            type="text"
+                                            id="firstName"
                                             name="firstName"
                                             value={formData.firstName}
                                             onChange={handleChange}
-                                            placeholder="First"
+                                            className="w-full px-3 py-2 border rounded"
                                             required
-                                            className="w-full border px-3 py-2 rounded-md"
                                         />
-                                        <span className="text-sm text-gray-500 mt-1">First</span>
                                     </div>
-                                    <div>
+                                    <div className="w-full">
+                                        <span className="text-sm text-gray-400 mt-1 block">Last Name</span>
                                         <input
+                                            type="text"
                                             id="lastName"
                                             name="lastName"
                                             value={formData.lastName}
                                             onChange={handleChange}
-                                            placeholder="Last"
+                                            className="w-full px-3 py-2 border bg-white text-black rounded"
                                             required
-                                            className="w-full border px-3 py-2 rounded-md"
                                         />
-                                        <span className="text-sm text-gray-500 mt-1">Last</span>
                                     </div>
                                 </div>
                             </div>
@@ -154,7 +154,7 @@ export default function EnquiryForm02() {
                                 </div>
                             </div>
 
-                            <div>
+                            {/* <div>
                                 <label htmlFor="Email" className="block mb-2">
                                     Email <span className="text-red-500">*</span>
                                 </label>
@@ -168,7 +168,7 @@ export default function EnquiryForm02() {
                                     required
                                     className="w-full border px-3 py-2 rounded-md"
                                 />
-                            </div>
+                            </div> */}
 
                             <button type="submit" className="w-full md:w-auto px-8 py-2 bg-[#000] hover:bg-[#222] text-white rounded-md">
                                 Submit
