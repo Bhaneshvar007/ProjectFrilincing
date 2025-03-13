@@ -148,7 +148,7 @@ export default function EnquiryForm02() {
                                         placeholder="xxx xxx xxxx"
                                         value={formData.phone}
                                         onChange={handleChange}
-                                        className="w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-amber-500"
+                                        className="w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black rounded"
                                         required
                                     />
                                 </div>
