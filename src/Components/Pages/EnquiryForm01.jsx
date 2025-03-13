@@ -107,7 +107,10 @@ export default function EnquiryForm01({ setIsOpen }) {
                 name="phone" placeholder="xxx xxx xxxx"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-3 py-2 bg-white text-black active:border-none outline-none  focus:outline-none focus:ring-1 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-white text-black
+                 active:border-none outline-none
+                   focus:outline-none focus:ring-1
+                    focus:ring-black rounded"
                 required
               />
             </div>
@@ -123,7 +126,7 @@ export default function EnquiryForm01({ setIsOpen }) {
               name="email" placeholder="your@gmail.com"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-3 py-2 bg-white text-black border  rounded"
+              className="w-full px-3 py-2 bg-white text-black border rounded"
               required
             />
           </div> */}
