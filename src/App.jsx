@@ -4,6 +4,8 @@ import Navbar from './Components/Pages/Navbar'
 import { Routes , Route } from 'react-router-dom'
 import EnquiryForm01 from './Components/Pages/EnquiryForm01'
 import PopupForm from './Components/Pages/PopupForm'
+import EnquiryForm02 from './Components/Pages/EnquiryForm02'
+import PrivacyPolicy from './Components/Pages/PrivacyPolicy'
 
 function App() {
 
@@ -15,6 +17,8 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/enquiry' element={<EnquiryForm01/>}/>
         <Route path='/popupform' element={<PopupForm/>}/>
+        <Route path='/contect' element={<EnquiryForm02/>}/>
+        <Route path='/privacypolicy' element={<PrivacyPolicy/>}/>
       </Routes>
     </div>
   )

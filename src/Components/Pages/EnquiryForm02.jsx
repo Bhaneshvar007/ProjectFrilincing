@@ -138,14 +138,14 @@ export default function EnquiryForm02() {
                                 </label>
                                 <div className="flex border rounded-md">
                                     <div className=" p-3 py-2 flex items-center border">
-                                        <img src="https://cdn.pixabay.com/photo/2016/08/24/17/07/india-1617463_1280.png?height=30&width=40" alt="Flag" className="w-6 h-4    mr-1" />
-                                        <span>+</span>
+                                        {/* <img src="https://cdn.pixabay.com/photo/2016/08/24/17/07/india-1617463_1280.png?height=30&width=40" alt="Flag" className="w-6 h-4    mr-1" /> */}
+                                        <span>+91</span>
                                     </div>
                                     <input
                                         type="tel"
                                         id="Phone"
                                         name="phone"
-                                        placeholder="9685854782"
+                                        placeholder="xxx xxx xxxx"
                                         value={formData.phone}
                                         onChange={handleChange}
                                         className="w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-amber-500"
