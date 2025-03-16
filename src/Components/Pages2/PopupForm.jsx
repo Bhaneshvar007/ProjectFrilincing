@@ -38,7 +38,7 @@ export default function PopupForm({ isOpen, setIsOpen }) {
             const data = await response.json();
 
             if (data.success) {
-                alert("Form Submitted Successfully ✅");
+                // alert("Form Submitted Successfully ✅");
                 event.target.reset();
                 setShowPopup(true);
                 setIsOpen(false);
