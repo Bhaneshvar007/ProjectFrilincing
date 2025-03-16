@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { IoCallOutline } from "react-icons/io5";
+import SucessPopup from "./SucessPopup";
 
 export default function EnquiryForm01({ setIsOpen }) {
+  const [showPopup, setShowPopup] = useState(false);
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -36,8 +39,9 @@ export default function EnquiryForm01({ setIsOpen }) {
       const data = await response.json();
 
       if (data.success) {
-        alert("Form Submitted Successfully ✅");
+        // alert("Form Submitted Successfully ✅");
         event.target.reset();
+        setShowPopup(true);
       } else {
         console.log("Error", data);
         setResult(data.message);
@@ -54,6 +58,10 @@ export default function EnquiryForm01({ setIsOpen }) {
   return (
     <div id="EnquiryForm01" className="p-4 md:p-12 flex flex-col md:flex-row items-center justify-between">
       {/* Registration Form Section */}
+
+      <SucessPopup showPopup={showPopup} setShowPopup={setShowPopup}/>
+
+
       <div className="w-full md:w-1/2 mb-8 md:mb-0">
         <h2 className="text-3xl font-bold mb-8">Register Your Interest</h2>
 
@@ -131,7 +139,7 @@ export default function EnquiryForm01({ setIsOpen }) {
 
           <button
             type="submit"
-            className="bg-[#000] hover:bg-[#111] text-sm text-white font-medium py-2 md:py-3 px-8 transition-colors rounded-full"
+            className="bg-[#000] hover:bg-[#111] text-sm text-white font-medium py-2 md:py-3 px-8 transition-colors"
           >
             Submit
           </button>

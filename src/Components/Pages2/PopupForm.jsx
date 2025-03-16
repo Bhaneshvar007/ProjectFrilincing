@@ -1,13 +1,15 @@
 import { MdCancel } from "react-icons/md";
 
 import { useState, useEffect } from "react";
+import SucessPopup from "./SucessPopup";
 
 export default function PopupForm({ isOpen, setIsOpen }) {
     const [formData, setFormData] = useState({
         fullName: "",
-
         phone: "",
     });
+    const [showPopup, setShowPopup] = useState(false);
+
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -38,12 +40,14 @@ export default function PopupForm({ isOpen, setIsOpen }) {
             if (data.success) {
                 alert("Form Submitted Successfully ✅");
                 event.target.reset();
+                setShowPopup(true);
+                setIsOpen(false);
             } else {
                 console.log("Error", data);
                 setResult(data.message);
                 alert("Error: " + data.message);
+                setIsOpen(false);
             }
-            setIsOpen(false);
         } catch (error) {
             console.error("Fetch Error:", error);
             alert("Something went wrong. Please check your internet connection.");
@@ -63,7 +67,9 @@ export default function PopupForm({ isOpen, setIsOpen }) {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-20">
+            <SucessPopup showPopup={showPopup} setShowPopup={setShowPopup} />
+
             <div className="bg-white rounded-lg p-6 w-full max-w-[700px] relative shadow-lg">
                 {/* Close Button */}
                 <button onClick={() => setIsOpen(false)} className="absolute top-5 right-8 text-gray-600 hover:text-gray-900">
