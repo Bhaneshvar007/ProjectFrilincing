@@ -5,8 +5,8 @@ const SucessPopup = ({showPopup , setShowPopup}) => {
   return (
     <div>
        {showPopup && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/60 animate-in fade-in duration-300">
-          <div className="bg-white rounded-lg shadow-lg p-6 max-w-sm w-full mx-4 animate-in zoom-in-50 duration-300">
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-white animate-in fade-in duration-300">
+          <div className="bg-white rounded-lg shadow p-6 max-w-sm w-full mx-4 animate-in zoom-in-50 duration-300">
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="rounded-full bg-green-100 p-3 dark:bg-green-900/30">
                 <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-500" />

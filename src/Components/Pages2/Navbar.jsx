@@ -26,7 +26,7 @@ export default function Navbar({scrollToEnquiry}) {
 
   // Dynamic classes based on scroll position
   const navbarClasses = scrolled
-    ? "flex items-center justify-between px-4 py-4 md:px-4 lg:px-14 fixed top-0 w-full bg-white shadow-md z-50"
+    ? "flex items-center justify-between px-4 py-4 md:px-4 lg:px-14 fixed top-0 w-full bg-white shadow-md z-40"
     : "flex items-center justify-between px-4 py-4 md:px-4 lg:px-14 fixed top-0 w-full z-50";
 
   const textClasses = scrolled
