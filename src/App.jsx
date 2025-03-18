@@ -15,7 +15,8 @@ function App() {
   
    
       <Routes>
-        <Route path='/' element={<Home2/>}/>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/home2' element={<Home2/>}/>
         <Route path='/enquiry' element={<EnquiryForm01/>}/>
         <Route path='/popupform' element={<PopupForm/>}/>
         <Route path='/contectpage' element={<ContectHome/>}/>
