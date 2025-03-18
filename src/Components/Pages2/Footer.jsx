@@ -20,7 +20,7 @@ const Footer = () => {
                     <div>
                         Created by <a href="https://naman-web.netlify.app/" target='_blank' className='hover:underline text-blue-500 font-semibold'>Naman Jain</a>
                     </div>
-                    <Link to="privacypolicy" className='hover:underline hover:text-gray-500'>PrivacyPolicy</Link>
+                    <Link to="/privacypolicy" className='hover:underline hover:text-gray-500'>PrivacyPolicy</Link>
                 </div>
             </div>
 
